@@ -5,25 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hello Rigo with Vanilla.js</title>
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
       integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
       crossorigin="anonymous"
     />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
-      </div>
+    <div class="navContainer container">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+         <p class="title" >Si sale Joker, perdiste... </p>
+        </li>
+      </ul>
     </div>
+    </div>
+    <div class="cardContainer container-fluid">
+      <div id="generatedCard" class="randomCard card">
+        <div id="topIcon" class="topIcon randomPint"></div>
+        <div id="middleNumber" class="middleNumber randomNumber"></div>
+        <div id="bottomIcon" class="bottomIcon randomPint2"></div>
+        <!-- pintas ♦ ♥ ♠ ♣ -->
+      </div>     
+      <button id="randomButton" type="button" class="btn btn-primary btn-lg m-2 p-2">Adivina la siguiente carta</button>
+    </div>
+
+    <link rel="stylesheet" href="app.js" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

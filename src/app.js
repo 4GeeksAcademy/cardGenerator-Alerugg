@@ -6,7 +6,8 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 window.onload = function() {
-  // document.querySelector("#generatedCard").style.
+  const generatedCard = document.querySelector("#generatedCard");
+  generatedCard.style.background = "linear-gradient(135deg, #ff4e50, #f9d423)";
 
   const pints = ["♦", "♥", "♠", "♣"]; // <-- array de las pintas.
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, "J", "Q", "K", "JOKER"]; // <--  array de numero y letra.
@@ -29,10 +30,10 @@ window.onload = function() {
   };
 
   const alertaTiempo = () => {
-    alert("OJO! Si tardas tanto tambien pierdes!");
+    alert("OJO! Si tardas tanto tambien pierdes!"); // <-- alerta de aviso de que el tiempo te puede hacer perder
   };
   const alertaPerdiste = () => {
-    alert("Te lo dije, Perdiste!");
+    alert("Te lo dije, Perdiste!"); // <-- alerta de aviso de que perdiste
   };
 
   // esta funcion genera una carta nueva //
@@ -40,17 +41,17 @@ window.onload = function() {
     const icons = document.querySelector(".randomPint"); // <-- selecciona el icono superior izquierdo del naipe.
     const icons2 = document.querySelector(".randomPint2"); // <-- selecciona el icono inferior derecho del naipe.
     const randomNumber = document.querySelector(".randomNumber"); // <-- selecciona numero del centro del naipe.
-    // const cardFront = document.querySelector("#cardFront");
-    // const cardBack = document.querySelector("#cardBack");
 
     const pint = randomPint();
     const number = randomNumbers();
     const color = pintColors(pint);
 
+    // este condicional ejecuta la carta con los iconos y la imagen del joker cuando toca === "JOKER" del array numbers
+
     if (number === "JOKER") {
       topIcon.innerHTML = `<img src="${joker}" alt="Joker" style="width: 50px; height: 50px;border-radius: 10px">`;
       bottomIcon.innerHTML = `<img src="${joker}" alt="Joker" style="width: 50px; height: 50px;border-radius: 10px">`;
-      middleNumber.innerHTML = `<img src="${joker2}" alt="Joker2" style="width: 60%; height: 60%; border-radius: 10px; border: solid red 3px">`;
+      middleNumber.innerHTML = `<img src="${joker2}" alt="Joker2" style="width: 40%; height: 40%; border-radius: 10px; border: solid red 3px">`;
       generatedCard.style.background = "black";
       alert("Perdiste!");
     } else {
@@ -61,19 +62,25 @@ window.onload = function() {
       icons2.style.color = color;
       generatedCard.style.background = "white";
     }
-    // cardFront.style.display = "flex";
-    // cardBack.style.display = "none";
   };
 
-  setInterval(refreshScreen, 5005);
-  // setInterval(alertaTiempo, 4900);
-  // setInterval(alertaPerdiste, 5000);
+  setInterval(refreshScreen, 15000); // <-- este temporizador ejecuta la funcion para que genere una carta nueva en 15 segundos
+  setInterval(alertaTiempo, 14000); // <-- este temporizador ejecuta la alerta para que avisar del tiempo a los 14  segundos
 
+  const cardSize = () => {
+    const card = document.querySelector("#generatedCard");
+    const heightImput = document.querySelector("#heightImput").value;
+    const widthImput = document.querySelector("#heightImput").value;
+    const height = heightImput ? `${heightImput}px` : "450px";
+    const width = widthImput ? `${widthImput}px` : "320px";
+
+    card.style.width = width;
+    card.style.height = height;
+  };
   document
     .querySelector("#randomButton")
     .addEventListener("click", refreshScreen); // con este evento click sobre el boton, ejecutamos la funcion refreshScreen
-};
 
-// lo haremos con eventlistener y cambiaremos los iconos por j de joker y el numero por la imagen de joker
-// otro event listener para que cuando cargue la pagina tenga un fondo de atras de cartas
-// agregar alert de joker perdiste
+  document.querySelector("#sizeButton1").addEventListener("click", cardSize);
+  document.querySelector("#sizeButton2").addEventListener("click", cardSize);
+};

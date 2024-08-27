@@ -3,7 +3,7 @@ body {
 }
 
 .nav {
-  background-color: black;
+  background-color: rgb(4, 37, 11);
   border-radius: 10px;
 }
 
@@ -51,9 +51,15 @@ body {
 .title {
   font-size: 50px;
   color: azure;
+  padding: 5px;
 }
 
 .btn {
   height: 65px;
   width: 320px;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: center;
 }

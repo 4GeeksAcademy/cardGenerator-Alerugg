@@ -69,8 +69,7 @@ window.onload = function() {
 
   const cardSize = () => {
     const card = document.querySelector("#generatedCard");
-    const heightImput = document.querySelector("#heightImput").value;
-
+    const heightImput = document.querySelector("#heightImput").value; // <-- esta funcion toma el imput en px y aplica el height
     const height = heightImput ? `${heightImput}px` : "450px";
 
     card.style.height = height;
@@ -78,7 +77,7 @@ window.onload = function() {
 
   const cardSize2 = () => {
     const card = document.querySelector("#generatedCard");
-    const widthImput = document.querySelector("#heightImput").value;
+    const widthImput = document.querySelector("#heightImput").value; // <-- esta funcion toma el imput en px y aplica el width
     const width = widthImput ? `${widthImput}px` : "320px";
 
     card.style.width = width;
@@ -87,6 +86,6 @@ window.onload = function() {
     .querySelector("#randomButton")
     .addEventListener("click", refreshScreen); // con este evento click sobre el boton, ejecutamos la funcion refreshScreen
 
-  document.querySelector("#sizeButton1").addEventListener("click", cardSize);
-  document.querySelector("#sizeButton2").addEventListener("click", cardSize2);
+  document.querySelector("#sizeButton1").addEventListener("click", cardSize); // <-- evento click que aplica el estilo height del imput
+  document.querySelector("#sizeButton2").addEventListener("click", cardSize2); // <-- evento click que aplica el estilo width del imput
 };

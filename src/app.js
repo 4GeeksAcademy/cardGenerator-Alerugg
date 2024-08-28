@@ -65,22 +65,28 @@ window.onload = function() {
   };
 
   setInterval(refreshScreen, 15000); // <-- este temporizador ejecuta la funcion para que genere una carta nueva en 15 segundos
-  setInterval(alertaTiempo, 14000); // <-- este temporizador ejecuta la alerta para que avisar del tiempo a los 14  segundos
+  setInterval(alertaTiempo, 30000); // <-- este temporizador ejecuta la alerta para que avisar del tiempo a los 14  segundos
 
   const cardSize = () => {
     const card = document.querySelector("#generatedCard");
     const heightImput = document.querySelector("#heightImput").value;
-    const widthImput = document.querySelector("#heightImput").value;
+
     const height = heightImput ? `${heightImput}px` : "450px";
+
+    card.style.height = height;
+  };
+
+  const cardSize2 = () => {
+    const card = document.querySelector("#generatedCard");
+    const widthImput = document.querySelector("#heightImput").value;
     const width = widthImput ? `${widthImput}px` : "320px";
 
     card.style.width = width;
-    card.style.height = height;
   };
   document
     .querySelector("#randomButton")
     .addEventListener("click", refreshScreen); // con este evento click sobre el boton, ejecutamos la funcion refreshScreen
 
   document.querySelector("#sizeButton1").addEventListener("click", cardSize);
-  document.querySelector("#sizeButton2").addEventListener("click", cardSize);
+  document.querySelector("#sizeButton2").addEventListener("click", cardSize2);
 };

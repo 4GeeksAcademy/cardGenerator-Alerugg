@@ -72,7 +72,7 @@ window.onload = function() {
     const heightImput = document.querySelector("#heightImput").value; // <-- esta funcion toma el imput en px y aplica el height
     const height = heightImput ? `${heightImput}px` : "450px";
 
-    card.style.height = height;
+    card.style.height = height; // agregar aqui un evento change <------
   };
 
   const cardSize2 = () => {
@@ -89,3 +89,8 @@ window.onload = function() {
   document.querySelector("#sizeButton1").addEventListener("click", cardSize); // <-- evento click que aplica el estilo height del imput
   document.querySelector("#sizeButton2").addEventListener("click", cardSize2); // <-- evento click que aplica el estilo width del imput
 };
+
+// cambiar el evento en vez de que al darle al boton se cambie, con change que tome el imput value y lo aplique sin darle boton, hay que validar ela entrada del imput
+// reto validar inputs que sea numerico y mayor a 0, no puede ser letras solo numeros
+// condicional que si no es numerico, haya una alerta que no puedes escribir texto
+// refatorizar pintColors funcion con solo un if

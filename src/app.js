@@ -10,7 +10,7 @@ window.onload = function() {
   generatedCard.style.background = "linear-gradient(135deg, #ff4e50, #f9d423)";
 
   const pints = ["♦", "♥", "♠", "♣"]; // <-- array de las pintas.
-  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, "J", "Q", "K", "JOKER"]; // <--  array de numero y letra.
+  const numbers = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "JOKER"]; // <--  array de numero y letra.
   const joker =
     "https://i.pinimg.com/originals/43/65/96/4365964f4a3180781f1492107a5095b1.jpg";
   const joker2 =
@@ -32,10 +32,10 @@ window.onload = function() {
   const alertaTiempo = () => {
     alert("OJO! Si tardas tanto tambien pierdes!"); // <-- alerta de aviso de que el tiempo te puede hacer perder
   };
-  const alertaPerdiste = () => {
-    setTimeout(40000);
-    alert("Te lo dije, Perdiste!"); // <-- alerta de aviso de que perdiste
-  };
+  // const alertaPerdiste = () => {
+  //   setTimeout(60000);
+  //   alert("Te lo dije, Perdiste!"); // <-- alerta de aviso de que perdiste
+  // };
 
   // esta funcion genera una carta nueva //
   const refreshScreen = () => {

@@ -33,6 +33,7 @@ window.onload = function() {
     alert("OJO! Si tardas tanto tambien pierdes!"); // <-- alerta de aviso de que el tiempo te puede hacer perder
   };
   const alertaPerdiste = () => {
+    setTimeout(40000);
     alert("Te lo dije, Perdiste!"); // <-- alerta de aviso de que perdiste
   };
 
@@ -54,6 +55,9 @@ window.onload = function() {
       middleNumber.innerHTML = `<img src="${joker2}" alt="Joker2" style="width: 40%; height: 40%; border-radius: 10px; border: solid red 3px">`;
       generatedCard.style.background = "black";
       alert("Perdiste!");
+      setTimeout(() => {
+        location.reload(); // Recarga la página para reiniciar el juego
+      }, 1500);
     } else {
       randomNumber.textContent = number;
       icons.textContent = pint;
@@ -64,8 +68,8 @@ window.onload = function() {
     }
   };
 
-  setInterval(refreshScreen, 15000); // <-- este temporizador ejecuta la funcion para que genere una carta nueva en 15 segundos
-  setInterval(alertaTiempo, 30000); // <-- este temporizador ejecuta la alerta para que avisar del tiempo a los 14  segundos
+  setInterval(refreshScreen, 10000); // <-- este temporizador ejecuta la funcion para que genere una carta nueva en 10 segundos
+  setInterval(alertaTiempo, 30000); // <-- este temporizador ejecuta la alerta para que avisar del tiempo a los 30  segundos
 
   const cardSize = () => {
     const card = document.querySelector("#generatedCard");
